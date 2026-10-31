@@ -1,0 +1,5 @@
+<?php
+$prevMonth = date("n", strtotime("first day of last month"));
+
+echo "Previous month number: $prevMonth";
+?>

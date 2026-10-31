@@ -1,0 +1,36 @@
+<?php
+if (isset($_POST['color'])) {
+    $color = $_POST['color'];
+    setcookie("bg_color", $color, time() + (30 * 24 * 60 * 60), "/");
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+$bgColor = isset($_COOKIE['bg_color']) ? $_COOKIE['bg_color'] : "#ffffff";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color Cookie</title>
+    <style>
+        body {
+            background-color: <?php echo htmlspecialchars($bgColor); ?>;
+        }
+    </style>
+</head>
+<body>
+    <h2>Choose a background color</h2>
+
+    <form method="post">
+        <select name="color">
+            <option value="#ffffff" <?php if ($bgColor == "#ffffff") echo "selected"; ?>>White (default)</option>
+            <option value="#ffcccc" <?php if ($bgColor == "#ffcccc") echo "selected"; ?>>Red</option>
+            <option value="#cce5ff" <?php if ($bgColor == "#cce5ff") echo "selected"; ?>>Blue</option>
+            <option value="#d4edda" <?php if ($bgColor == "#d4edda") echo "selected"; ?>>Green</option>
+            <option value="#fff3cd" <?php if ($bgColor == "#fff3cd") echo "selected"; ?>>Yellow</option>
+            <option value="#e2d9f3" <?php if ($bgColor == "#e2d9f3") echo "selected"; ?>>Purple</option>
+        </select>
+        <input type="submit" value="Change Color">
+    </form>
+</body>
+</html>

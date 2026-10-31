@@ -1,0 +1,16 @@
+<?php
+for ($i = 1; $i <= 3; $i++) {
+    for ($j = 1; $j <= 50; $j++) {
+        if ($i == 1 && $j == 1) {
+            echo "1";
+        } elseif ($i == 1 && $j == 50) {
+            echo "2";
+        } elseif ($i == 3 && $j == 26) {
+            echo "3";
+        } else {
+            echo "&nbsp;";
+        }
+    }
+    echo "<br>";
+}
+?>

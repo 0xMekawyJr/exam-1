@@ -1,0 +1,13 @@
+<?php
+$numbers = [10, 30, 20];
+
+$max = $numbers[0];
+
+foreach ($numbers as $num) {
+    if ($num > $max) {
+        $max = $num;
+    }
+}
+
+echo "The max number is: $max";
+?>

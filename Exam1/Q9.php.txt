@@ -1,0 +1,10 @@
+<?php
+$string = "Hello, welcome to the PHP exam";
+$search = "PHP";
+
+if (preg_match("/" . preg_quote($search, "/") . "/", $string)) {
+    echo "The string contains \"$search\".";
+} else {
+    echo "The string does not contain \"$search\".";
+}
+?>

@@ -1,0 +1,17 @@
+<?php
+$numbers = [2, 4, 3, 1, 6, 7, 5, 8, 0, 9];
+
+$sum = 0;
+$count = 0;
+
+foreach ($numbers as $num) {
+    $sum += $num;
+    $count++;
+}
+
+$avg = $sum / $count;
+
+echo "Sum = $sum <br>";
+echo "Count = $count <br>";
+echo "Average = $avg";
+?>
